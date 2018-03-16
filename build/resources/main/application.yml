@@ -1,0 +1,31 @@
+#设置端口号
+server:
+  port: 9002
+#设置服务名称
+spring:
+  application:
+    name: feign-one
+#指定注册信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+#配置Feign超时时间配置(需配置两个)
+#配置ribbon超时时间
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+#关闭熔断器
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+#添加GZIP数据压缩
+feign:
+  compression:
+    request:
+      enable: true
+    response:
+      enable: true
