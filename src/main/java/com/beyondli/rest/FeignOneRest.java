@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 /**
  * Created by beyondLi
  * Date 2018/3/15
- * Desc .
+ * Desc .S
  */
 @RestController
 @RequestMapping(value = "/one")
