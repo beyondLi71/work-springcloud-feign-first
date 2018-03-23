@@ -1,0 +1,48 @@
+
+#设置服务名称
+spring:
+  application:
+    name: feign-first
+  #设置请求的配置中心(通过服务)
+  cloud:
+    config:
+      #设置config账号密码
+      username: beyondLi
+      password: 123456
+      fail-fast: true
+      #运行环境(决定使用哪个配置文件，默认是application或服务名的文件，指定后寻找对应后缀的文件名)
+      #profile: dev
+      #重试间隔时间
+      retry:
+        initial-interval: 3000
+      discovery:
+        #开启通过服务来访问ConfigServer功能
+        enabled: true
+        #指定注册服务名
+        serviceId: config-server
+      #设置先检验远程配置中心是否可连接，在进行本地其余加载(还可再配置重试机制，引入retry和aop包)
+      failFast: true
+#指定册信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+#配置Feign超时时间配置(需配置两个)
+#配置ribbon超时时间
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+#关闭熔断器
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+#添加GZIP数据压缩
+feign:
+  compression:
+    request:
+      enable: true
+    response:
+      enable: true

@@ -28,15 +28,29 @@ ext {
 }
 
 dependencies {
+	//校验
 	compile('org.springframework.boot:spring-boot-starter-validation')
-	compile('org.springframework.boot:spring-boot-starter-web')
+	//eureka客户端
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	//feign
 	compile('org.springframework.cloud:spring-cloud-starter-feign')
+	//热更新
 	runtime('org.springframework.boot:spring-boot-devtools')
+	//lombok
 	compileOnly('org.projectlombok:lombok')
+	//test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	//事物注解(最后放到common)
 	compile ('org.springframework:spring-tx:4.3.10.RELEASE')
+	//配置中心客户端
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+	//关于连接config配置中心重试机制依赖包
+	compile('org.springframework.retry:spring-retry')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	//设置程序监控(用来生成手动刷新git配置接口)
+	//compile("org.springframework.boot:spring-boot-starter-actuator")
+	//添加bus实时获取最新git数据依赖,上面那个依赖也是必须的
+	//compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
 }
 
 dependencyManagement {
