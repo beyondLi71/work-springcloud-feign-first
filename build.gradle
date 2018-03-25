@@ -54,7 +54,7 @@ dependencies {
 	//zuul
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
 	//依赖common 根据具体情况选择依赖开始通过maven私服依赖
-	//compile project(":common")
+	compile project(":common")
 }
 
 dependencyManagement {

@@ -12,4 +12,11 @@ public interface FeignOneService {
      * @return
      */
     String getTwo();
+
+    /**
+     * 测试异常
+     * @param state
+     * @return
+     */
+    String testExcByState(Integer state);
 }

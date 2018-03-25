@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Aspect
 public class ExampleAop {
 
-    @Around("execution (* com.beyondli.rest..*.*(..)) && ")
+    @Around("execution (* com.beyondli.rest..*.*(..))")
     public Object beforeCheckToken(ProceedingJoinPoint pro) throws Throwable {
         /**
        //设置Token值

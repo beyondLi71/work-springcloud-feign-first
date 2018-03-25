@@ -1,6 +1,6 @@
 package com.beyondli.common.tools.exception;
 
-import com.kingboy.common.utils.uuid.UUIDUtils;
+import com.beyondli.common.utils.uuid.UUIDUtils;
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.log4j.Log4j;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * @desc 全局异常捕捉并转换异常
  */
 @Log4j
-@RestControllerAdvice(basePackages = "com.kingboy.controller")
+@RestControllerAdvice(basePackages = "com.beyondli.rest")
 public class GlobalExceptionHandler {
 
     @Value("${spring.application.name}")

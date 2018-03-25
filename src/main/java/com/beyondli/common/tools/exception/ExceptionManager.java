@@ -1,7 +1,7 @@
 package com.beyondli.common.tools.exception;
 
 
-import com.kingboy.common.utils.uuid.UUIDUtils;
+import com.beyondli.common.utils.uuid.UUIDUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
