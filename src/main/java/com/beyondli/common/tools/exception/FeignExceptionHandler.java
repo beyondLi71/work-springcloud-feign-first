@@ -1,6 +1,6 @@
 package com.beyondli.common.tools.exception;
 
-import com.kingboy.common.utils.json.JsonUtils;
+import com.beyondli.common.utils.json.JsonUtils;
 import feign.Response;
 import feign.Util;
 import feign.codec.ErrorDecoder;

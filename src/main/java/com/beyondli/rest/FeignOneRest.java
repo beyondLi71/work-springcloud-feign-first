@@ -1,13 +1,16 @@
 package com.beyondli.rest;
 
+import com.beyondli.common.utils.apiresult.AbstractApiResult;
 import com.beyondli.service.FeignOneService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Objects;
 
 /**
  * Created by beyondLi
@@ -47,6 +50,15 @@ public class FeignOneRest {
     public String getConfig() {
         //return "ok";
         return title;
+    }
+
+    /**
+     * 测试异常
+     */
+    @RequestMapping(value = "/test/exc/{state}", method = RequestMethod.GET)
+    public AbstractApiResult testExcByState(@PathVariable Integer state) {
+        String info = feignOneService.testExcByState(state);
+        return AbstractApiResult.success(info);
     }
 
 }
