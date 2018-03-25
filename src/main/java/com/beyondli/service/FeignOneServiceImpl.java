@@ -44,4 +44,13 @@ public class FeignOneServiceImpl implements FeignOneService {
         }
         return "success";
     }
+
+    /**
+     * 调用two测试异常
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void getTwoExc() {
+        feignTwo.helloExc();
+    }
 }

@@ -19,4 +19,9 @@ public interface FeignOneService {
      * @return
      */
     String testExcByState(Integer state);
+
+    /**
+     * 调用two测试异常
+     */
+    void getTwoExc();
 }

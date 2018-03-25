@@ -13,4 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface FeignTwo {
     @RequestMapping(value = "/two/hello", method = RequestMethod.GET)
     public String hello();
+
+    /**
+     * 调用two测试异常
+     */
+    @RequestMapping(value = "/two/hello/exc", method = RequestMethod.GET)
+    void helloExc();
 }
