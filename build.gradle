@@ -25,6 +25,7 @@ repositories {
 
 ext {
 	springCloudVersion = 'Edgware.SR2'
+	EncodeVersion='4.11'
 }
 
 dependencies {
@@ -55,6 +56,8 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
 	//依赖common 根据具体情况选择依赖开始通过maven私服依赖
 	compile project(":common")
+	//日志所需jar
+	compile("net.logstash.logback:logstash-logback-encoder:$EncodeVersion")
 }
 
 dependencyManagement {
