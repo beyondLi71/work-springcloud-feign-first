@@ -51,6 +51,10 @@ dependencies {
 	//compile("org.springframework.boot:spring-boot-starter-actuator")
 	//添加bus实时获取最新git数据依赖,上面那个依赖也是必须的
 	//compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+	//zuul
+	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+	//依赖common 根据具体情况选择依赖开始通过maven私服依赖
+	//compile project(":common")
 }
 
 dependencyManagement {
