@@ -61,4 +61,11 @@ public class FeignOneRest {
         return AbstractApiResult.success(info);
     }
 
+    /**
+     * 调用two测试异常
+     */
+    @RequestMapping(value = "/get/two/exc", method = RequestMethod.GET)
+    public void getTwoExc() {
+        feignOneService.getTwoExc();
+    }
 }

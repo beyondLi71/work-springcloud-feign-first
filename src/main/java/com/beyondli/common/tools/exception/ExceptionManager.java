@@ -50,7 +50,7 @@ public class ExceptionManager {
      */
     protected PhantomException create(PhantomException pe) {
         List<StackTraceElement> traceList = Stream.of(pe.getStackTrace())
-                .filter(p -> p.getClassName().contains("com.kingboy"))
+                .filter(p -> p.getClassName().contains("com.beyondli"))
                 .filter(p -> !p.getClassName().contains("$"))
                 .filter(p -> !p.getClassName().contains(".exception."))
                 .collect(Collectors.toList());
