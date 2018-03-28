@@ -1,13 +1,13 @@
 package com.beyondli.rest;
 
 import com.beyondli.common.utils.apiresult.AbstractApiResult;
+import com.beyondli.dto.user.User;
 import com.beyondli.service.FeignOneService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Objects;
@@ -20,6 +20,8 @@ import java.util.Objects;
 @RefreshScope
 @RestController
 @RequestMapping(value = "/one")
+//swagger配置
+@Api(value = "FeignOneRest")
 public class FeignOneRest {
     @Resource
     FeignOneService feignOneService;
@@ -67,5 +69,14 @@ public class FeignOneRest {
     @RequestMapping(value = "/get/two/exc", method = RequestMethod.GET)
     public void getTwoExc() {
         feignOneService.getTwoExc();
+    }
+
+    /**
+     * 测试swagger
+     */
+    @RequestMapping(value = "/test/swagger", method = RequestMethod.POST)
+    @ApiOperation(value = "测试", notes = "通过id获取用户")
+    public void testSwagger(@RequestBody User user) {
+        System.out.println(user);
     }
 }
