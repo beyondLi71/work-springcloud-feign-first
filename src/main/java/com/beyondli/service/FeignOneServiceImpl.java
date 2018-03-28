@@ -4,9 +4,7 @@ import com.beyondli.common.tools.exception.ExceptionManager;
 import com.beyondli.feign.FeignTwo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
-import javax.xml.transform.sax.SAXTransformerFactory;
 import java.util.Objects;
 
 /**
