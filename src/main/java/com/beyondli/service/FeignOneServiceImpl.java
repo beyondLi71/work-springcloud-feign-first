@@ -1,10 +1,14 @@
 package com.beyondli.service;
 
 import com.beyondli.common.tools.exception.ExceptionManager;
+import com.beyondli.dto.user.User;
 import com.beyondli.feign.FeignTwo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.Objects;
 
 /**
@@ -50,5 +54,15 @@ public class FeignOneServiceImpl implements FeignOneService {
     @Transactional(rollbackFor = Exception.class)
     public void getTwoExc() {
         feignTwo.helloExc();
+    }
+
+    /**
+     * 测试swagger
+     * @param user
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void testSwagger(User user) {
+        System.out.println(user.toString());
     }
 }

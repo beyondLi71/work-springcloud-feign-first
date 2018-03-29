@@ -7,10 +7,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.Objects;
+import javax.validation.Valid;
 
 /**
  * Created by beyondLi
@@ -77,6 +78,7 @@ public class FeignOneRest {
     @RequestMapping(value = "/test/swagger", method = RequestMethod.POST)
     @ApiOperation(value = "测试", notes = "通过id获取用户")
     public void testSwagger(@RequestBody User user) {
-        System.out.println(user);
+        feignOneService.testSwagger(user);
+        //System.out.println(user);
     }
 }
