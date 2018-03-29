@@ -117,7 +117,7 @@
   <logger name="org.hibernate" level="INFO" />
   <logger name="com.beyondli.rest" level="DEBUG" />
 
-  <root level="DEBUG">
+  <root level="INFO">
     <appender-ref ref="FILEERROR" />
     <appender-ref ref="FILEWARN" />
     <appender-ref ref="FILEINFO" />
